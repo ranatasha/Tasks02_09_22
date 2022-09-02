@@ -14,18 +14,19 @@ for i in range(n):
         if my_list[i][j] == a:
             x = i
             y = j
+            break
 if y == 0:
     if x == 0:
         b = my_list[x + 1][y + 1]
-    elif x == m - 1:
+    elif x == n - 1:
         b = my_list[x - 1][y + 1]
     else:
         b = my_list[x + 1][y + 1]
         c = my_list[x - 1][y + 1]
-elif y == n - 1:
+elif y == m - 1:
     if x == 0:
         b = my_list[x + 1][y - 1]
-    elif x == m - 1:
+    elif x == n - 1:
         b = my_list[x - 1][y - 1]
     else:
         b = my_list[x + 1][y - 1]
@@ -36,4 +37,10 @@ else:
         c = my_list[x - 1][y + 1]
         d = my_list[x + 1][y - 1]
         e = my_list[x - 1][y - 1]
+    elif x == 0:
+    	b = my_list[x + 1][y - 1] 
+        c = my_list[x + 1][y + 1] 
+    else: 
+        b = my_list[x - 1][y - 1] # сверху слева
+        c = my_list[x - 1][y + 1] # сверху справа
 print(b * c * d * e)
